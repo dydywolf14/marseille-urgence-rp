@@ -1,67 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Marseille Urgence Roleplay</title>
+<meta charset="UTF-8">
+<title>Marseille Urgence Roleplay</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: url('https://images.unsplash.com/photo-1526481280691-3c4697d67c4c') no-repeat center/cover;
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+  color: white;
+}
 
-    .overlay {
-      background: rgba(0,0,0,0.7);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+/* Overlay sombre */
+.overlay {
+  background: rgba(0, 0, 0, 0.75);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 60px;
-    }
+/* Logo */
+.logo {
+  width: 180px;
+  margin: 0 auto 20px;
+}
 
-    span {
-      color: red;
-    }
+/* Titre */
+h1 {
+  font-size: 70px;
+  margin: 10px 0;
+  letter-spacing: 3px;
+}
 
-    p {
-      opacity: 0.8;
-    }
+.red {
+  color: #ff2b2b;
+}
 
-    .btn {
-      padding: 15px 30px;
-      margin: 10px;
-      text-decoration: none;
-      color: white;
-      display: inline-block;
-    }
+/* Texte */
+p {
+  font-size: 18px;
+  opacity: 0.8;
+}
 
-    .discord {
-      background: red;
-    }
+/* Boutons */
+.buttons {
+  margin-top: 30px;
+}
 
-    .server {
-      border: 2px solid gold;
-    }
-  </style>
+.btn {
+  padding: 15px 35px;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Bouton Discord */
+.discord {
+  background: #ff2b2b;
+}
+
+.discord:hover {
+  background: #ff0000;
+}
+
+/* Bouton serveur */
+.server {
+  border: 2px solid gold;
+  color: gold;
+}
+
+.server:hover {
+  background: gold;
+  color: black;
+}
+
+/* Animation légère */
+h1, p, .btn {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="overlay">
-    <h1>MARSEILLE <span>URGENCE RP</span></h1>
-    <p>Serveur FiveM RP Français • Police • SAMU • Pompiers</p>
+<div class="overlay">
 
-    <div>
-      <a href="#" class="btn discord">Rejoindre le Discord</a>
-      <a href="#" class="btn server">Voir le serveur</a>
-    </div>
+  <!-- Logo (remplace le lien si tu upload ton image plus tard) -->
+  <img src="https://i.imgur.com/yourlogo.png" class="logo">
+
+  <h1>MARSEILLE <span class="red">URGENCE RP</span></h1>
+
+  <p>Serveur FiveM RP Français • Police • SAMU • Pompiers • Immersion totale</p>
+
+  <div class="buttons">
+    <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
+      Rejoindre le Discord
+    </a>
+
+    <a href="#" class="btn server">
+      Voir le serveur
+    </a>
   </div>
+
+</div>
 
 </body>
 </html>
