@@ -2,117 +2,252 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marseille Urgence Roleplay</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Impact, Arial Black, sans-serif;
   color: white;
+  background: #05070d;
+  overflow-x: hidden;
 }
 
-/* Overlay sombre */
-.overlay {
-  background: rgba(0, 0, 0, 0.75);
-  height: 100vh;
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(3,7,15,0.82), rgba(3,7,15,0.88)),
+    url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 75px;
+  padding: 0 45px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Logo */
-.logo {
-  width: 180px;
-  margin: 0 auto 20px;
+.logo-text {
+  font-size: 24px;
+  letter-spacing: 7px;
 }
 
-/* Titre */
-h1 {
-  font-size: 70px;
-  margin: 10px 0;
-  letter-spacing: 3px;
+.logo-text span {
+  color: #d9a51c;
 }
 
-.red {
-  color: #ff2b2b;
+.menu {
+  display: flex;
+  gap: 42px;
+  align-items: center;
 }
 
-/* Texte */
-p {
-  font-size: 18px;
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 5px;
   opacity: 0.8;
 }
 
-/* Boutons */
+.join-top {
+  background: #d90d2f;
+  padding: 18px 30px;
+  transform: skewX(-12deg);
+}
+
+.join-top span {
+  display: block;
+  transform: skewX(12deg);
+}
+
+/* CONTENT */
+.content {
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.badge {
+  border-top: 1px solid #b88a16;
+  border-bottom: 1px solid #b88a16;
+  padding: 12px 35px;
+  color: #d9a51c;
+  font-size: 12px;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title-main {
+  font-size: 120px;
+  line-height: 0.9;
+  letter-spacing: 4px;
+  color: #f4f4f4;
+}
+
+.title-red {
+  font-size: 110px;
+  line-height: 0.85;
+  letter-spacing: 2px;
+  color: #d90d2f;
+  text-shadow: 4px 4px 0 #30000a;
+}
+
+.subtitle {
+  margin-top: 35px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 7px;
+  color: #9aa1ad;
+}
+
 .buttons {
-  margin-top: 30px;
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
 }
 
 .btn {
-  padding: 15px 35px;
-  margin: 10px;
+  min-width: 250px;
+  padding: 20px 35px;
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 5px;
+  font-family: Arial Black, Arial, sans-serif;
+  transform: skewX(-12deg);
   transition: 0.3s;
 }
 
-/* Bouton Discord */
+.btn span {
+  display: block;
+  transform: skewX(12deg);
+}
+
 .discord {
-  background: #ff2b2b;
+  background: #d90d2f;
 }
 
 .discord:hover {
-  background: #ff0000;
+  background: #ff123c;
 }
 
-/* Bouton serveur */
 .server {
-  border: 2px solid gold;
-  color: gold;
+  border: 1px solid #d9a51c;
+  color: #d9a51c;
 }
 
 .server:hover {
-  background: gold;
+  background: #d9a51c;
   color: black;
 }
 
-/* Animation légère */
-h1, p, .btn {
-  animation: fadeIn 1.5s ease;
-}
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  .menu {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+
+  .title-main {
+    font-size: 62px;
+  }
+
+  .title-red {
+    font-size: 55px;
+  }
+
+  .badge {
+    font-size: 10px;
+    letter-spacing: 4px;
+    padding: 10px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    min-width: 260px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
+<section class="hero">
 
-  <!-- Logo (remplace le lien si tu upload ton image plus tard) -->
-  <img src="https://i.imgur.com/yourlogo.png" class="logo">
+  <nav class="navbar">
+    <div class="logo-text"><span>MARSEILLE</span> URGENCE</div>
 
-  <h1>MARSEILLE <span class="red">URGENCE RP</span></h1>
+    <div class="menu">
+      <a href="#">LE SERVEUR</a>
+      <a href="#">SCREENSHOTS</a>
+      <a href="#">STAFF</a>
+      <a href="#">RÈGLEMENT</a>
+      <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="join-top">
+        <span>REJOINDRE</span>
+      </a>
+    </div>
+  </nav>
 
-  <p>Serveur FiveM RP Français • Police • SAMU • Pompiers • Immersion totale</p>
+  <div class="content">
 
-  <div class="buttons">
-    <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
-      Rejoindre le Discord
-    </a>
+    <div class="badge">
+      🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE
+    </div>
 
-    <a href="#" class="btn server">
-      Voir le serveur
-    </a>
+    <h1 class="title-main">MARSEILLE</h1>
+    <h2 class="title-red">URGENCE RP</h2>
+
+    <p class="subtitle">
+      FIVEPD V2 · POLICE · SAMU · POMPIERS · IMMERSION TOTALE
+    </p>
+
+    <div class="buttons">
+      <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
+        <span>REJOINDRE LE DISCORD</span>
+      </a>
+
+      <a href="#" class="btn server">
+        <span>VOIR LE SERVEUR</span>
+      </a>
+    </div>
+
   </div>
 
-</div>
+</section>
 
 </body>
 </html>
