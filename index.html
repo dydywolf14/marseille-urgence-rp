@@ -12,36 +12,57 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Impact, Arial Black, sans-serif;
-  color: white;
-  background: #05070d;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* HERO */
+body {
+  font-family: Arial, sans-serif;
+  background: #05070d;
+  color: white;
+}
+
+/* ACCUEIL */
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(3,7,15,0.82), rgba(3,7,15,0.88)),
+    linear-gradient(rgba(3,7,15,0.82), rgba(3,7,15,0.9)),
     url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
 }
 
-/* NAVBAR */
+/* Effet gyrophares */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,80,255,0.22), transparent, rgba(255,0,35,0.22));
+  animation: gyro 4s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes gyro {
+  from { opacity: 0.2; }
+  to { opacity: 0.8; }
+}
+
 .navbar {
   height: 75px;
   padding: 0 45px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .logo-text {
+  font-family: Impact, Arial Black, sans-serif;
   font-size: 24px;
-  letter-spacing: 7px;
+  letter-spacing: 6px;
 }
 
 .logo-text span {
@@ -50,7 +71,7 @@ body {
 
 .menu {
   display: flex;
-  gap: 42px;
+  gap: 38px;
   align-items: center;
 }
 
@@ -58,13 +79,13 @@ body {
   color: white;
   text-decoration: none;
   font-size: 12px;
-  letter-spacing: 5px;
-  opacity: 0.8;
+  letter-spacing: 4px;
+  opacity: 0.85;
 }
 
 .join-top {
   background: #d90d2f;
-  padding: 18px 30px;
+  padding: 18px 28px;
   transform: skewX(-12deg);
 }
 
@@ -73,49 +94,48 @@ body {
   transform: skewX(12deg);
 }
 
-/* CONTENT */
 .content {
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
   padding: 20px;
 }
 
 .badge {
-  border-top: 1px solid #b88a16;
-  border-bottom: 1px solid #b88a16;
+  border-top: 1px solid #d9a51c;
+  border-bottom: 1px solid #d9a51c;
   padding: 12px 35px;
   color: #d9a51c;
   font-size: 12px;
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   margin-bottom: 20px;
-  font-family: Arial, sans-serif;
 }
 
 .title-main {
-  font-size: 120px;
+  font-family: Impact, Arial Black, sans-serif;
+  font-size: 115px;
   line-height: 0.9;
   letter-spacing: 4px;
-  color: #f4f4f4;
 }
 
 .title-red {
-  font-size: 110px;
-  line-height: 0.85;
-  letter-spacing: 2px;
+  font-family: Impact, Arial Black, sans-serif;
+  font-size: 105px;
   color: #d90d2f;
-  text-shadow: 4px 4px 0 #30000a;
+  line-height: 0.9;
+  text-shadow: 4px 4px 0 #280007;
 }
 
 .subtitle {
-  margin-top: 35px;
-  font-family: Arial, sans-serif;
+  margin-top: 30px;
+  color: #aab0bd;
   font-size: 15px;
-  letter-spacing: 7px;
-  color: #9aa1ad;
+  letter-spacing: 6px;
 }
 
 .buttons {
@@ -129,11 +149,11 @@ body {
   padding: 20px 35px;
   text-decoration: none;
   color: white;
-  font-size: 14px;
-  letter-spacing: 5px;
-  font-family: Arial Black, Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 4px;
   transform: skewX(-12deg);
   transition: 0.3s;
+  display: inline-block;
 }
 
 .btn span {
@@ -146,7 +166,7 @@ body {
 }
 
 .discord:hover {
-  background: #ff123c;
+  background: #ff143d;
 }
 
 .server {
@@ -157,6 +177,113 @@ body {
 .server:hover {
   background: #d9a51c;
   color: black;
+}
+
+/* SECTIONS */
+section {
+  padding: 90px 40px;
+}
+
+.dark {
+  background: #080c16;
+}
+
+.section-title {
+  text-align: center;
+  font-family: Impact, Arial Black, sans-serif;
+  font-size: 48px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  color: #d90d2f;
+}
+
+.text {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.8;
+  color: #b9bfcc;
+  font-size: 17px;
+}
+
+/* SERVICES */
+.cards {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #0f1524;
+  border: 1px solid rgba(217,165,28,0.35);
+  width: 280px;
+  padding: 35px 25px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #d90d2f;
+}
+
+.card .icon {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #d9a51c;
+}
+
+.card p {
+  color: #aeb5c4;
+  line-height: 1.6;
+}
+
+/* SCREENSHOTS */
+.gallery {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery div {
+  height: 190px;
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* REGLEMENT */
+.rules {
+  max-width: 900px;
+  margin: auto;
+}
+
+.rules li {
+  margin: 15px 0;
+  color: #c7ccd8;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+  background: #03050a;
+  text-align: center;
+  padding: 35px;
+  color: #777;
 }
 
 /* MOBILE */
@@ -171,26 +298,26 @@ body {
 
   .logo-text {
     font-size: 18px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
   }
 
   .title-main {
-    font-size: 62px;
+    font-size: 58px;
   }
 
   .title-red {
-    font-size: 55px;
+    font-size: 52px;
   }
 
   .badge {
     font-size: 10px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     padding: 10px;
   }
 
   .subtitle {
     font-size: 12px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
   }
 
   .buttons {
@@ -200,22 +327,26 @@ body {
   .btn {
     min-width: 260px;
   }
+
+  .section-title {
+    font-size: 36px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<header class="hero" id="accueil">
 
   <nav class="navbar">
     <div class="logo-text"><span>MARSEILLE</span> URGENCE</div>
 
     <div class="menu">
-      <a href="#">LE SERVEUR</a>
-      <a href="#">SCREENSHOTS</a>
-      <a href="#">STAFF</a>
-      <a href="#">RÈGLEMENT</a>
+      <a href="#serveur">LE SERVEUR</a>
+      <a href="#services">SERVICES</a>
+      <a href="#screenshots">SCREENSHOTS</a>
+      <a href="#reglement">RÈGLEMENT</a>
       <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="join-top">
         <span>REJOINDRE</span>
       </a>
@@ -223,17 +354,12 @@ body {
   </nav>
 
   <div class="content">
-
-    <div class="badge">
-      🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE
-    </div>
+    <div class="badge">🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE</div>
 
     <h1 class="title-main">MARSEILLE</h1>
     <h2 class="title-red">URGENCE RP</h2>
 
-    <p class="subtitle">
-      FIVEPD V2 · POLICE · SAMU · POMPIERS · IMMERSION TOTALE
-    </p>
+    <p class="subtitle">FIVEPD V2 · POLICE · SAMU · POMPIERS · IMMERSION TOTALE</p>
 
     <div class="buttons">
       <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
@@ -244,10 +370,68 @@ body {
         <span>VOIR LE SERVEUR</span>
       </a>
     </div>
-
   </div>
 
+</header>
+
+<section id="serveur" class="dark">
+  <h2 class="section-title">LE <span>SERVEUR</span></h2>
+  <p class="text">
+    Marseille Urgence Roleplay est un serveur FiveM RP français centré sur les interventions d’urgence.
+    Rejoins une expérience immersive avec la Police, le SAMU et les Pompiers dans une ambiance réaliste,
+    sérieuse et communautaire.
+  </p>
 </section>
+
+<section id="services">
+  <h2 class="section-title">NOS <span>SERVICES</span></h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🚓</div>
+      <h3>Police</h3>
+      <p>Interventions, patrouilles, contrôles, enquêtes et maintien de l’ordre dans Marseille.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚑</div>
+      <h3>SAMU</h3>
+      <p>Prise en charge médicale, urgences vitales et secours aux citoyens.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚒</div>
+      <h3>Pompiers</h3>
+      <p>Incendies, accidents, secours routiers et interventions dangereuses.</p>
+    </div>
+  </div>
+</section>
+
+<section id="screenshots" class="dark">
+  <h2 class="section-title">SCREEN<span>SHOTS</span></h2>
+
+  <div class="gallery">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</section>
+
+<section id="reglement">
+  <h2 class="section-title">RÈGLE<span>MENT</span></h2>
+
+  <ul class="rules">
+    <li>Respect obligatoire entre tous les joueurs.</li>
+    <li>Le no fear, le troll et le HRP vocal sont interdits.</li>
+    <li>Les scènes doivent rester réalistes et cohérentes.</li>
+    <li>Les décisions du staff doivent être respectées.</li>
+    <li>Rejoins le Discord pour lire le règlement complet.</li>
+  </ul>
+</section>
+
+<footer>
+  © 2026 Marseille Urgence Roleplay — Tous droits réservés.
+</footer>
 
 </body>
 </html>
