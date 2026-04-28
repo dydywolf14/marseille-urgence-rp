@@ -6,172 +6,339 @@
 <title>Marseille Urgence Roleplay</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#05070d;color:white;font-family:Arial,sans-serif}
 
-body {
-  font-family: Arial, sans-serif;
-  background:#05070d;
-  color:white;
-}
-
-/* HERO */
-.hero {
-  height:100vh;
+.hero{
+  min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    linear-gradient(180deg,rgba(2,5,12,.75),rgba(2,5,12,.95)),
     url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
   background-position:center;
+  position:relative;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-/* TITRES */
-.title-main {
-  font-size:90px;
-  font-family: Impact;
-}
-
-.title-red {
-  font-size:80px;
-  color:#d90d2f;
-}
-
-/* TEXTE */
-.subtitle {
-  margin-top:20px;
-  opacity:0.7;
-  letter-spacing:3px;
-}
-
-/* BOUTONS */
-.buttons {
-  margin-top:30px;
-}
-
-.btn {
-  padding:15px 30px;
-  margin:10px;
-  text-decoration:none;
-  color:white;
-  display:inline-block;
-  font-weight:bold;
-}
-
-.discord {
-  background:#d90d2f;
-}
-
-.server {
-  border:1px solid gold;
-  color:gold;
-}
-
-/* 🔥 SCREENSHOTS ANIMÉS */
-.screenshots {
-  background:#080c16;
-  padding:60px 0;
   overflow:hidden;
 }
 
-.screenshots h2 {
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 50%,rgba(0,76,255,.25),transparent 28%),
+    radial-gradient(circle at 80% 45%,rgba(255,0,45,.22),transparent 30%);
+  animation:lights 4s infinite alternate;
+}
+
+@keyframes lights{
+  from{opacity:.35}
+  to{opacity:.85}
+}
+
+.navbar{
+  height:80px;
+  padding:0 45px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.logo{
+  font-family:Impact,Arial Black,sans-serif;
+  font-size:24px;
+  letter-spacing:5px;
+}
+
+.logo span{color:#d9a51c}
+
+.menu{
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:3px;
+  opacity:.85;
+}
+
+.menu .join{
+  background:#d90d2f;
+  padding:15px 25px;
+  transform:skewX(-12deg);
+}
+
+.menu .join span{
+  display:block;
+  transform:skewX(12deg);
+}
+
+.content{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  z-index:2;
+  padding:35px 20px;
+}
+
+.hero-box{
+  max-width:1050px;
+  width:100%;
+}
+
+.badge{
+  display:inline-block;
+  border:1px solid rgba(217,165,28,.55);
+  background:rgba(0,0,0,.35);
+  padding:13px 28px;
+  color:#d9a51c;
+  font-size:12px;
+  letter-spacing:5px;
+  margin-bottom:28px;
+}
+
+.title{
+  font-family:Impact,Arial Black,sans-serif;
+  font-size:clamp(55px,9vw,125px);
+  line-height:.9;
+  letter-spacing:4px;
+}
+
+.title span{
+  display:block;
+  color:#d90d2f;
+  text-shadow:4px 4px 0 #250006;
+}
+
+.subtitle{
+  margin:32px auto 0;
+  max-width:850px;
+  color:#b5bdcb;
+  font-size:15px;
+  letter-spacing:5px;
+  line-height:1.8;
+}
+
+.buttons{
+  margin-top:38px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  min-width:250px;
+  padding:19px 32px;
+  text-decoration:none;
+  color:white;
+  font-weight:900;
+  letter-spacing:4px;
+  display:inline-block;
+  transform:skewX(-12deg);
+  transition:.25s;
+}
+
+.btn span{
+  display:block;
+  transform:skewX(12deg);
+}
+
+.discord{background:#d90d2f}
+.discord:hover{background:#ff123c}
+
+.server{
+  border:1px solid #d9a51c;
+  color:#d9a51c;
+  background:rgba(0,0,0,.25);
+}
+.server:hover{background:#d9a51c;color:#000}
+
+.scroll{
+  position:absolute;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#6f7480;
+  letter-spacing:7px;
+  font-size:11px;
+  z-index:2;
+}
+
+/* Galerie juste en dessous */
+.screenshots{
+  background:#05070d;
+  padding:65px 0;
+  overflow:hidden;
+}
+
+.screenshots h2{
   text-align:center;
   color:#d9a51c;
-  letter-spacing:6px;
-  font-size:14px;
+  letter-spacing:7px;
+  font-size:13px;
+  font-weight:400;
   margin-bottom:30px;
 }
 
-.slider {
-  width:100%;
-  overflow:hidden;
-}
+.slider{overflow:hidden;width:100%}
 
-.track {
+.track{
   display:flex;
   width:max-content;
-  animation:scroll 25s linear infinite;
+  animation:scrollScreens 28s linear infinite;
 }
 
-.track img {
-  width:320px;
-  height:200px;
+.track img{
+  width:340px;
+  height:210px;
   object-fit:cover;
-  margin-right:15px;
-  filter:brightness(0.6);
-  transition:0.3s;
+  margin-right:18px;
+  filter:brightness(.65);
+  transition:.3s;
 }
 
-.track img:hover {
+.track img:hover{
   filter:brightness(1);
-  transform:scale(1.05);
+  transform:scale(1.04);
 }
 
-/* Animation */
-@keyframes scroll {
-  from { transform:translateX(0); }
-  to { transform:translateX(-50%); }
+@keyframes scrollScreens{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 
-/* MOBILE */
+/* Mobile */
 @media(max-width:768px){
-  .title-main { font-size:50px; }
-  .title-red { font-size:45px; }
+  .hero{
+    min-height:100svh;
+    background-position:center;
+  }
+
+  .navbar{
+    height:70px;
+    padding:0 22px;
+    justify-content:center;
+  }
+
+  .logo{
+    font-size:18px;
+    letter-spacing:4px;
+  }
+
+  .menu{display:none}
+
+  .badge{
+    font-size:10px;
+    letter-spacing:3px;
+    padding:11px 14px;
+    margin-bottom:24px;
+  }
+
+  .title{
+    font-size:58px;
+    letter-spacing:2px;
+  }
+
+  .subtitle{
+    font-size:12px;
+    letter-spacing:3px;
+    margin-top:25px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    align-items:center;
+    margin-top:30px;
+  }
+
+  .btn{
+    min-width:270px;
+    padding:17px 25px;
+    font-size:13px;
+  }
+
+  .scroll{display:none}
+
+  .track img{
+    width:260px;
+    height:160px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ACCUEIL -->
-<section class="hero">
+<header class="hero" id="accueil">
+  <nav class="navbar">
+    <div class="logo"><span>MARSEILLE</span> URGENCE</div>
 
-  <h1 class="title-main">MARSEILLE</h1>
-  <h2 class="title-red">URGENCE RP</h2>
+    <div class="menu">
+      <a href="#serveur">LE SERVEUR</a>
+      <a href="#screenshots">SCREENSHOTS</a>
+      <a href="#reglement">RÈGLEMENT</a>
+      <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="join"><span>REJOINDRE</span></a>
+    </div>
+  </nav>
 
-  <p class="subtitle">
-    Serveur FiveM RP Français • Police • SAMU • Pompiers
-  </p>
+  <div class="content">
+    <div class="hero-box">
+      <div class="badge">🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE</div>
 
-  <div class="buttons">
-    <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
-      Rejoindre le Discord
-    </a>
+      <h1 class="title">
+        MARSEILLE
+        <span>URGENCE RP</span>
+      </h1>
 
-    <a href="#" class="btn server">
-      Voir le serveur
-    </a>
+      <p class="subtitle">
+        FIVEPD V2 · POLICE · SAMU · POMPIERS · INTERVENTIONS RÉALISTES · IMMERSION TOTALE
+      </p>
+
+      <div class="buttons">
+        <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
+          <span>REJOINDRE LE DISCORD</span>
+        </a>
+
+        <a href="#" class="btn server">
+          <span>VOIR LE SERVEUR</span>
+        </a>
+      </div>
+    </div>
   </div>
 
-</section>
+  <div class="scroll">DÉFILER</div>
+</header>
 
-<!-- 🔥 SCREENSHOTS JUSTE EN DESSOUS -->
-<section class="screenshots">
-
+<section class="screenshots" id="screenshots">
   <h2>— SCREENSHOTS DU SERVEUR —</h2>
 
   <div class="slider">
     <div class="track">
+      <img src="screen1.png">
+      <img src="screen2.png">
+      <img src="screen3.png">
+      <img src="screen4.png">
+      <img src="screen5.png">
 
-      <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80">
-
-      <!-- doublon pour effet infini -->
-      <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80">
-
+      <img src="screen1.png">
+      <img src="screen2.png">
+      <img src="screen3.png">
+      <img src="screen4.png">
+      <img src="screen5.png">
     </div>
   </div>
-
 </section>
 
 </body>
