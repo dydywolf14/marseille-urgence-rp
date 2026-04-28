@@ -7,147 +7,78 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#05070d;color:white;font-family:Arial,sans-serif}
 
+body{
+  font-family:Arial, sans-serif;
+  background:#05070d;
+  color:white;
+}
+
+/* HERO AVEC FOND MARSEILLE */
 .hero{
   min-height:100vh;
+
   background:
-    linear-gradient(180deg,rgba(2,5,12,.75),rgba(2,5,12,.95)),
-    url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80");
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1571055107559-3e67626fa8be?auto=format&fit=crop&w=1600&q=80");
+
   background-size:cover;
   background-position:center;
-  position:relative;
+
   display:flex;
   flex-direction:column;
-  overflow:hidden;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 50%,rgba(0,76,255,.25),transparent 28%),
-    radial-gradient(circle at 80% 45%,rgba(255,0,45,.22),transparent 30%);
-  animation:lights 4s infinite alternate;
-}
-
-@keyframes lights{
-  from{opacity:.35}
-  to{opacity:.85}
-}
-
-.navbar{
-  height:80px;
-  padding:0 45px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:relative;
-  z-index:2;
-}
-
-.logo{
-  font-family:Impact,Arial Black,sans-serif;
-  font-size:24px;
-  letter-spacing:5px;
-}
-
-.logo span{color:#d9a51c}
-
-.menu{
-  display:flex;
-  gap:35px;
-  align-items:center;
-}
-
-.menu a{
-  color:white;
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:3px;
-  opacity:.85;
-}
-
-.menu .join{
-  background:#d90d2f;
-  padding:15px 25px;
-  transform:skewX(-12deg);
-}
-
-.menu .join span{
-  display:block;
-  transform:skewX(12deg);
-}
-
-.content{
-  flex:1;
-  display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  position:relative;
-  z-index:2;
-  padding:35px 20px;
+  padding:20px;
 }
 
-.hero-box{
-  max-width:1050px;
-  width:100%;
-}
-
-.badge{
-  display:inline-block;
-  border:1px solid rgba(217,165,28,.55);
-  background:rgba(0,0,0,.35);
-  padding:13px 28px;
-  color:#d9a51c;
-  font-size:12px;
-  letter-spacing:5px;
-  margin-bottom:28px;
-}
-
+/* TITRES */
 .title{
-  font-family:Impact,Arial Black,sans-serif;
-  font-size:clamp(55px,9vw,125px);
-  line-height:.9;
-  letter-spacing:4px;
+  font-family:Impact, Arial Black;
+  font-size:clamp(60px,10vw,120px);
+  line-height:0.9;
 }
 
 .title span{
-  display:block;
-  color:#d90d2f;
-  text-shadow:4px 4px 0 #250006;
+  color:#ff1e2d;
+  text-shadow:3px 3px 0 #250006;
 }
 
-.subtitle{
-  margin:32px auto 0;
-  max-width:850px;
-  color:#b5bdcb;
-  font-size:15px;
+/* BADGE */
+.badge{
+  border:1px solid #d9a51c;
+  padding:10px 20px;
+  margin-bottom:25px;
+  color:#d9a51c;
+  font-size:12px;
   letter-spacing:5px;
-  line-height:1.8;
 }
 
+/* TEXTE */
+.subtitle{
+  margin-top:25px;
+  color:#b5bdcb;
+  letter-spacing:4px;
+  max-width:800px;
+}
+
+/* BOUTONS */
 .buttons{
-  margin-top:38px;
+  margin-top:30px;
   display:flex;
-  justify-content:center;
   gap:20px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .btn{
-  min-width:250px;
-  padding:19px 32px;
+  padding:18px 30px;
   text-decoration:none;
-  color:white;
-  font-weight:900;
+  font-weight:bold;
   letter-spacing:4px;
-  display:inline-block;
   transform:skewX(-12deg);
-  transition:.25s;
+  display:inline-block;
 }
 
 .btn span{
@@ -155,125 +86,73 @@ body{background:#05070d;color:white;font-family:Arial,sans-serif}
   transform:skewX(12deg);
 }
 
-.discord{background:#d90d2f}
-.discord:hover{background:#ff123c}
+.discord{
+  background:#ff1e2d;
+  color:white;
+}
 
 .server{
-  border:1px solid #d9a51c;
-  color:#d9a51c;
-  background:rgba(0,0,0,.25);
-}
-.server:hover{background:#d9a51c;color:#000}
-
-.scroll{
-  position:absolute;
-  bottom:22px;
-  left:50%;
-  transform:translateX(-50%);
-  color:#6f7480;
-  letter-spacing:7px;
-  font-size:11px;
-  z-index:2;
+  background:#d9a51c;
+  color:black;
 }
 
-/* Galerie juste en dessous */
+/* SCREENSHOTS */
 .screenshots{
+  padding:60px 0;
   background:#05070d;
-  padding:65px 0;
   overflow:hidden;
 }
 
 .screenshots h2{
   text-align:center;
   color:#d9a51c;
-  letter-spacing:7px;
-  font-size:13px;
-  font-weight:400;
+  letter-spacing:6px;
+  font-size:14px;
   margin-bottom:30px;
 }
 
-.slider{overflow:hidden;width:100%}
+.slider{overflow:hidden}
 
 .track{
   display:flex;
   width:max-content;
-  animation:scrollScreens 28s linear infinite;
+  animation:scroll 30s linear infinite;
 }
 
 .track img{
-  width:340px;
-  height:210px;
+  width:320px;
+  height:200px;
   object-fit:cover;
-  margin-right:18px;
-  filter:brightness(.65);
-  transition:.3s;
+  margin-right:15px;
+  filter:brightness(0.7);
+  transition:0.3s;
 }
 
 .track img:hover{
   filter:brightness(1);
-  transform:scale(1.04);
+  transform:scale(1.05);
 }
 
-@keyframes scrollScreens{
+/* animation */
+@keyframes scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:768px){
-  .hero{
-    min-height:100svh;
-    background-position:center;
-  }
-
-  .navbar{
-    height:70px;
-    padding:0 22px;
-    justify-content:center;
-  }
-
-  .logo{
-    font-size:18px;
-    letter-spacing:4px;
-  }
-
-  .menu{display:none}
-
-  .badge{
-    font-size:10px;
-    letter-spacing:3px;
-    padding:11px 14px;
-    margin-bottom:24px;
-  }
-
   .title{
-    font-size:58px;
-    letter-spacing:2px;
+    font-size:60px;
   }
 
   .subtitle{
     font-size:12px;
-    letter-spacing:3px;
-    margin-top:25px;
+    letter-spacing:2px;
   }
-
-  .buttons{
-    flex-direction:column;
-    align-items:center;
-    margin-top:30px;
-  }
-
-  .btn{
-    min-width:270px;
-    padding:17px 25px;
-    font-size:13px;
-  }
-
-  .scroll{display:none}
 
   .track img{
-    width:260px;
-    height:160px;
+    width:250px;
+    height:150px;
   }
 }
 </style>
@@ -281,64 +160,59 @@ body{background:#05070d;color:white;font-family:Arial,sans-serif}
 
 <body>
 
-<header class="hero" id="accueil">
-  <nav class="navbar">
-    <div class="logo"><span>MARSEILLE</span> URGENCE</div>
+<!-- ACCUEIL -->
+<section class="hero">
 
-    <div class="menu">
-      <a href="#serveur">LE SERVEUR</a>
-      <a href="#screenshots">SCREENSHOTS</a>
-      <a href="#reglement">RÈGLEMENT</a>
-      <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="join"><span>REJOINDRE</span></a>
-    </div>
-  </nav>
-
-  <div class="content">
-    <div class="hero-box">
-      <div class="badge">🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE</div>
-
-      <h1 class="title">
-        MARSEILLE
-        <span>URGENCE RP</span>
-      </h1>
-
-      <p class="subtitle">
-        FIVEPD V2 · POLICE · SAMU · POMPIERS · INTERVENTIONS RÉALISTES · IMMERSION TOTALE
-      </p>
-
-      <div class="buttons">
-        <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
-          <span>REJOINDRE LE DISCORD</span>
-        </a>
-
-        <a href="#" class="btn server">
-          <span>VOIR LE SERVEUR</span>
-        </a>
-      </div>
-    </div>
+  <div class="badge">
+    🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR MARSEILLE
   </div>
 
-  <div class="scroll">DÉFILER</div>
-</header>
+  <h1 class="title">
+    MARSEILLE
+    <span>URGENCE RP</span>
+  </h1>
 
-<section class="screenshots" id="screenshots">
+  <p class="subtitle">
+    FIVEPD V2 · POLICE · SAMU · POMPIERS · INTERVENTIONS RÉALISTES · IMMERSION TOTALE
+  </p>
+
+  <div class="buttons">
+    <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
+      <span>REJOINDRE LE DISCORD</span>
+    </a>
+
+    <a href="#" class="btn server">
+      <span>VOIR LE SERVEUR</span>
+    </a>
+  </div>
+
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots">
+
   <h2>— SCREENSHOTS DU SERVEUR —</h2>
 
   <div class="slider">
     <div class="track">
+
+      <!-- TES IMAGES -->
       <img src="screen1.png">
       <img src="screen2.png">
       <img src="screen3.png">
       <img src="screen4.png">
       <img src="screen5.png">
 
+      <!-- DUPLIQUÉ POUR ANIMATION -->
       <img src="screen1.png">
       <img src="screen2.png">
       <img src="screen3.png">
       <img src="screen4.png">
       <img src="screen5.png">
+
     </div>
   </div>
+
 </section>
 
 </body>
