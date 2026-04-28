@@ -14,30 +14,47 @@ body{
   color:white;
 }
 
-/* HERO FIVEM */
 .hero{
   min-height:100vh;
-
   background:
-    linear-gradient(rgba(5,10,20,0.85), rgba(5,10,20,0.95)),
+    linear-gradient(rgba(5,10,20,0.82), rgba(5,10,20,0.96)),
     url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80");
-
   background-size:cover;
   background-position:center;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
+  padding:140px 20px 40px;
+  position:relative;
 }
 
-/* TITRE */
+.logo-container{
+  position:absolute;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.logo{
+  width:120px;
+  filter:drop-shadow(0 0 12px rgba(0,0,0,.9));
+}
+
+.badge{
+  border:1px solid #d9a51c;
+  padding:12px 25px;
+  margin-bottom:35px;
+  color:#d9a51c;
+  font-size:12px;
+  letter-spacing:5px;
+}
+
 .title{
-  font-family:Impact, Arial Black;
-  font-size:clamp(60px,10vw,120px);
-  line-height:0.9;
+  font-family:Impact, Arial Black, sans-serif;
+  font-size:clamp(58px,10vw,120px);
+  line-height:.9;
 }
 
 .title span{
@@ -45,39 +62,30 @@ body{
   text-shadow:4px 4px 0 #200006;
 }
 
-/* BADGE */
-.badge{
-  border:1px solid #d9a51c;
-  padding:10px 25px;
-  margin-bottom:30px;
-  color:#d9a51c;
-  font-size:12px;
-  letter-spacing:5px;
-}
-
-/* TEXTE */
 .subtitle{
-  margin-top:20px;
+  margin-top:25px;
   color:#b5bdcb;
   letter-spacing:4px;
-  max-width:800px;
+  max-width:850px;
+  line-height:1.7;
 }
 
-/* BOUTONS */
 .buttons{
-  margin-top:30px;
+  margin-top:35px;
   display:flex;
-  gap:20px;
+  gap:22px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .btn{
-  padding:18px 30px;
+  padding:20px 35px;
+  min-width:260px;
   text-decoration:none;
   font-weight:bold;
   letter-spacing:4px;
   transform:skewX(-10deg);
+  display:inline-block;
 }
 
 .btn span{
@@ -95,7 +103,6 @@ body{
   color:#d9a51c;
 }
 
-/* SCREENSHOTS FIVEM */
 .screenshots{
   padding:60px 0;
   background:#060a14;
@@ -124,8 +131,8 @@ body{
   object-fit:cover;
   margin-right:15px;
   border-radius:5px;
-  filter:brightness(0.7);
-  transition:0.3s;
+  filter:brightness(.7);
+  transition:.3s;
 }
 
 .track img:hover{
@@ -133,25 +140,49 @@ body{
   transform:scale(1.05);
 }
 
-/* animation */
 @keyframes scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
 
-/* MOBILE */
 @media(max-width:768px){
-  .title{font-size:55px}
-  .subtitle{font-size:12px;letter-spacing:2px}
-  .track img{width:250px;height:150px}
+  .hero{
+    padding-top:125px;
+  }
+
+  .logo{
+    width:95px;
+  }
+
+  .badge{
+    font-size:10px;
+    letter-spacing:3px;
+  }
+
+  .title{
+    font-size:56px;
+  }
+
+  .subtitle{
+    font-size:12px;
+    letter-spacing:2px;
+  }
+
+  .track img{
+    width:250px;
+    height:150px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ACCUEIL -->
 <section class="hero">
+
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo Marseille Urgence RP" class="logo">
+  </div>
 
   <div class="badge">
     🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR URGENCE
@@ -178,31 +209,24 @@ body{
 
 </section>
 
-<!-- SCREENSHOTS -->
 <section class="screenshots">
-
   <h2>— SCREENSHOTS RP —</h2>
 
   <div class="slider">
     <div class="track">
-
-      <!-- ICI TES VRAIES IMAGES -->
       <img src="screen1.png">
       <img src="screen2.png">
       <img src="screen3.png">
       <img src="screen4.png">
       <img src="screen5.png">
 
-      <!-- DUPLIQUÉ -->
       <img src="screen1.png">
       <img src="screen2.png">
       <img src="screen3.png">
       <img src="screen4.png">
       <img src="screen5.png">
-
     </div>
   </div>
-
 </section>
 
 </body>
