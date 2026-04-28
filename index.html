@@ -14,11 +14,13 @@ body{
   color:white;
 }
 
+/* HERO */
 .hero{
   min-height:100vh;
   background:
     linear-gradient(rgba(5,10,20,0.82), rgba(5,10,20,0.96)),
     url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80");
+
   background-size:cover;
   background-position:center;
   display:flex;
@@ -30,6 +32,7 @@ body{
   position:relative;
 }
 
+/* LOGO */
 .logo-container{
   position:absolute;
   top:25px;
@@ -42,6 +45,7 @@ body{
   filter:drop-shadow(0 0 12px rgba(0,0,0,.9));
 }
 
+/* BADGE */
 .badge{
   border:1px solid #d9a51c;
   padding:12px 25px;
@@ -51,17 +55,33 @@ body{
   letter-spacing:5px;
 }
 
+/* TITRE PRO */
 .title{
-  font-family:Impact, Arial Black, sans-serif;
-  font-size:clamp(58px,10vw,120px);
-  line-height:.9;
+  font-family:'Arial Black', Impact, sans-serif;
+  font-size:clamp(60px,10vw,120px);
+  text-transform:uppercase;
+  line-height:0.9;
 }
 
-.title span{
+.title .white{
+  display:block;
+  color:#ffffff;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 20px rgba(255,255,255,0.1);
+}
+
+.title .red{
+  display:block;
   color:#ff1e2d;
-  text-shadow:4px 4px 0 #200006;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 15px #ff0000,
+    0 0 30px #ff0000,
+    0 0 60px rgba(255,0,0,0.6);
 }
 
+/* TEXTE */
 .subtitle{
   margin-top:25px;
   color:#b5bdcb;
@@ -70,6 +90,7 @@ body{
   line-height:1.7;
 }
 
+/* BOUTONS */
 .buttons{
   margin-top:35px;
   display:flex;
@@ -103,6 +124,7 @@ body{
   color:#d9a51c;
 }
 
+/* SCREENSHOTS */
 .screenshots{
   padding:60px 0;
   background:#060a14;
@@ -145,33 +167,14 @@ body{
   to{transform:translateX(-50%)}
 }
 
+/* MOBILE */
 @media(max-width:768px){
-  .hero{
-    padding-top:125px;
-  }
-
-  .logo{
-    width:95px;
-  }
-
-  .badge{
-    font-size:10px;
-    letter-spacing:3px;
-  }
-
-  .title{
-    font-size:56px;
-  }
-
-  .subtitle{
-    font-size:12px;
-    letter-spacing:2px;
-  }
-
-  .track img{
-    width:250px;
-    height:150px;
-  }
+  .hero{padding-top:120px}
+  .logo{width:95px}
+  .badge{font-size:10px;letter-spacing:3px}
+  .title{font-size:55px}
+  .subtitle{font-size:12px;letter-spacing:2px}
+  .track img{width:250px;height:150px}
 }
 </style>
 </head>
@@ -180,23 +183,28 @@ body{
 
 <section class="hero">
 
+  <!-- LOGO -->
   <div class="logo-container">
     <img src="logo.png" alt="Logo Marseille Urgence RP" class="logo">
   </div>
 
+  <!-- BADGE -->
   <div class="badge">
     🇫🇷 FIVEM · GTA V ROLEPLAY · SERVEUR URGENCE
   </div>
 
+  <!-- TITRE -->
   <h1 class="title">
-    MARSEILLE
-    <span>URGENCE RP</span>
+    <span class="white">MARSEILLE</span>
+    <span class="red">URGENCE RP</span>
   </h1>
 
+  <!-- TEXTE -->
   <p class="subtitle">
     POLICE · SAMU · POMPIERS · INTERVENTIONS RÉALISTES · EXPÉRIENCE RP
   </p>
 
+  <!-- BOUTONS -->
   <div class="buttons">
     <a href="https://discord.gg/bVsrMMZ6cs" target="_blank" class="btn discord">
       <span>REJOINDRE LE DISCORD</span>
@@ -209,11 +217,13 @@ body{
 
 </section>
 
+<!-- SCREENSHOTS -->
 <section class="screenshots">
   <h2>— SCREENSHOTS RP —</h2>
 
   <div class="slider">
     <div class="track">
+
       <img src="screen1.png">
       <img src="screen2.png">
       <img src="screen3.png">
@@ -225,6 +235,7 @@ body{
       <img src="screen3.png">
       <img src="screen4.png">
       <img src="screen5.png">
+
     </div>
   </div>
 </section>
